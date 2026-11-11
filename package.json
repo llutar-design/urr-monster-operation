@@ -1,0 +1,10 @@
+{
+  "name": "urr-monster-operation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "우르르! 몬스터 대작전 - 1스테이지 MVP",
+  "scripts": {
+    "test": "node tests/logic.test.js",
+    "test:browser": "node tests/browser.test.js"
+  }
+}

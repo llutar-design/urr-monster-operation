@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#59c1ff">
+  <title>우르르! 몬스터 대작전</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main id="stage">
+    <canvas id="game" aria-label="게임 화면"></canvas>
+
+    <button id="btn-hud-restart" class="hud-btn" type="button" aria-label="재시작" hidden>↻</button>
+
+    <section id="screen-title" class="screen title">
+      <h1 class="logo"><span class="logo-top">우르르!</span><span class="logo-bottom">몬스터 대작전</span></h1>
+      <p class="slogan">친구들을 모아 몬스터를 물리쳐라!</p>
+      <div class="menu">
+        <button id="btn-start" class="btn primary" type="button">친구들 출동!</button>
+        <button id="btn-howto" class="btn secondary" type="button">게임 방법</button>
+      </div>
+    </section>
+
+    <section id="screen-howto" class="screen dim" hidden>
+      <div class="card">
+        <h2>게임 방법</h2>
+        <ul class="howto">
+          <li><b class="chip blue">이동</b><span>화면을 좌우로 드래그하세요. PC에서는 마우스나 ←, → 키로 움직여요.</span></li>
+          <li><b class="chip yellow">공격</b><span>친구들이 앞에 있는 몬스터를 자동으로 공격해요.</span></li>
+          <li><b class="chip green">게이트</b><span>좌우 게이트 중 하나를 골라 지나가세요. 파란 게이트는 친구가 늘고, 빨간 게이트는 줄어요.</span></li>
+          <li><b class="chip red">조심</b><span>몬스터와 장난감 블록에 부딪히면 친구가 줄어요.</span></li>
+          <li><b class="chip purple">목표</b><span>마지막 거대 몬스터를 물리치면 대작전 성공!</span></li>
+        </ul>
+        <button id="btn-howto-close" class="btn primary small" type="button">알겠어요!</button>
+      </div>
+    </section>
+
+    <section id="screen-result" class="screen dim" hidden>
+      <div class="card result">
+        <h2 id="result-title"></h2>
+        <p id="result-detail"></p>
+        <button id="btn-restart" class="btn primary small" type="button"></button>
+        <button id="btn-home" class="btn secondary small" type="button">처음으로</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/squad.js"></script>
+  <script src="js/gates.js"></script>
+  <script src="js/combat.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/render/camera.js"></script>
+  <script src="js/render/sprites.js"></script>
+  <script src="js/render/world.js"></script>
+  <script src="js/render/entities.js"></script>
+  <script src="js/render/fx.js"></script>
+  <script src="js/render/hud.js"></script>
+  <script src="js/render/renderer.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
