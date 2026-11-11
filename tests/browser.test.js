@@ -87,7 +87,9 @@ async function js(expression) {
 async function open(query, metrics) {
   await send('Emulation.setDeviceMetricsOverride', metrics);
   await send('Emulation.setTouchEmulationEnabled', { enabled: !!metrics.mobile, maxTouchPoints: 1 });
-  await send('Page.navigate', { url: pathToFileURL(path.join(root, 'index.html')).href + query });
+  // GAME_URL을 지정하면 배포된 사이트를, 아니면 로컬 파일을 검사한다
+  const base = process.env.GAME_URL || pathToFileURL(path.join(root, 'index.html')).href;
+  await send('Page.navigate', { url: base + query });
   for (let i = 0; i < 100; i++) {
     await sleep(50);
     if (await js('!!(window.URR && URR.App && URR.App.state) && document.readyState === "complete"')) break;
