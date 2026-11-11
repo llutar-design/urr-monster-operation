@@ -9,7 +9,11 @@
 
   function resize() {
     const wrap = canvas.parentElement;
-    const cssW = Math.min(window.innerWidth, (window.innerHeight * C.VIEW_W) / C.VIEW_H);
+    // 창 전체가 아니라 body의 실제 영역에 맞춘다. 휴대폰 앱의 안전 여백이 있어도 화면이 잘리지 않는다.
+    const host = document.body;
+    const availW = host.clientWidth || window.innerWidth;
+    const availH = host.clientHeight || window.innerHeight;
+    const cssW = Math.min(availW, (availH * C.VIEW_W) / C.VIEW_H);
     const cssH = (cssW * C.VIEW_H) / C.VIEW_W;
     wrap.style.width = `${cssW}px`;
     wrap.style.height = `${cssH}px`;
